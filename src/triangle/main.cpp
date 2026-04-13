@@ -8,6 +8,19 @@
 
 SDL_Window *window;
 SDL_GPUDevice *device;
+SDL_GPUBuffer *vertexBuffer;
+SDL_GPUTransferBuffer *transferBuffer;
+
+struct Vertex {
+    float x, y, z;
+    float r, g, b, a;
+};
+
+static Vertex vertices[]{
+    {0.0f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f},   // top vertex
+    {-0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f}, // bottom left vertex
+    {0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f}   // bottom right vertex
+};
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
     window =
@@ -16,6 +29,54 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
     device = SDL_CreateGPUDevice(SDL_GPU_SHADERFORMAT_SPIRV, false, NULL);
     SDL_ClaimWindowForGPUDevice(device, window);
 
+    SDL_GPUBufferCreateInfo bufferInfo{};
+    bufferInfo.size = sizeof(vertices);
+    vertexBuffer = SDL_CreateGPUBuffer(device, &bufferInfo);
+    SDL_GPUTransferBufferCreateInfo transferBufferInfo{};
+    transferBufferInfo.size = sizeof(vertices);
+    transferBufferInfo.usage = SDL_GPU_TRANSFERBUFFERUSAGE_UPLOAD;
+    transferBuffer = SDL_CreateGPUTransferBuffer(device, &transferBufferInfo);
+
+    // Map transfer buffer to a pointer
+    // "Maps a transfer buffer into application address space"
+    // Application address space refers to computer RAM accessible by this
+    // program's CPU code.
+    // This allows CPU to access memory otherwise managed by GPU!
+    Vertex *data =
+        (Vertex *)SDL_MapGPUTransferBuffer(device, transferBuffer, false);
+
+    // Copy data from vertices struct to data.
+    SDL_memcpy(data, vertices, sizeof(vertices));
+
+    // We don't expect the triangle to change so we're just going to initiate
+    // copy pass at the beginning of the program.
+    SDL_GPUCommandBuffer *commandBuffer = SDL_AcquireGPUCommandBuffer(device);
+
+    // Copy pass starts here before render pass
+    // Transfer data from the transfer buffer to the vertex buffer.
+    SDL_GPUCopyPass *copyPass = SDL_BeginGPUCopyPass(commandBuffer);
+
+    // Where's the data to be uploaded
+    SDL_GPUTransferBufferLocation location{};
+    location.transfer_buffer = transferBuffer;
+    // Begins from the starting byte of the transfer buffer.
+    location.offset = 0;
+
+    // Where should the data go to?
+    SDL_GPUBufferRegion region{};
+    region.buffer = vertexBuffer;
+    region.size = sizeof(vertices);
+    // Paste beginning from the starting byte of the vertex buffer
+    region.offset = 0;
+
+    // 4th parameter cycle: true
+    // Cycling forces CPU to wait for GPU to complete its work before releasing
+    // a lock on memory. Leave the block of memory the GPU is working alone and
+    // use another block of memory for the CPU to work on This means
+    // asynchronous operations!
+    SDL_UploadToGPUBuffer(copyPass, &location, &region, true);
+    SDL_EndGPUCopyPass(copyPass);
+    SDL_SubmitGPUCommandBuffer(commandBuffer);
     return SDL_APP_CONTINUE;
 }
 
@@ -71,6 +132,9 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event) {
 }
 
 void SDL_AppQuit(void *appstate, SDL_AppResult result) {
+    SDL_UnmapGPUTransferBuffer(device, transferBuffer);
+    SDL_ReleaseGPUBuffer(device, vertexBuffer);
+    SDL_ReleaseGPUTransferBuffer(device, transferBuffer);
     SDL_DestroyGPUDevice(device);
     SDL_DestroyWindow(window);
 }
