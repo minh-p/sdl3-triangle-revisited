@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/hmp/Projects/SDL3/Triangle-Revisited/cmake_install.cmake",
+		"/home/hmp/Projects/SDL3/Triangle-Revisited/src/cmake_install.cmake",
+		"/home/hmp/Projects/SDL3/Triangle-Revisited/src/triangle/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

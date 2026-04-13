@@ -1,0 +1,1 @@
+/nix/store/kilyfvfmh9x9rlaj47ph1916lbc1pnsr-gcc-wrapper-14.3.0/bin/g++ -Wl,--dependency-file=CMakeFiles/triangle.dir/link.d CMakeFiles/triangle.dir/main.cpp.o -o ../../bin/triangle  /nix/store/n2yq3rzz3rd4c5xpny0vd33g7hrjni32-sdl3-3.2.28-lib/lib/libSDL3.so.0.2.28

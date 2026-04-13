@@ -1,0 +1,7 @@
+/home/hmp/Projects/SDL3/Triangle-Revisited/CMakeFiles/edit_cache.dir
+/home/hmp/Projects/SDL3/Triangle-Revisited/CMakeFiles/rebuild_cache.dir
+/home/hmp/Projects/SDL3/Triangle-Revisited/src/CMakeFiles/edit_cache.dir
+/home/hmp/Projects/SDL3/Triangle-Revisited/src/CMakeFiles/rebuild_cache.dir
+/home/hmp/Projects/SDL3/Triangle-Revisited/src/triangle/CMakeFiles/triangle.dir
+/home/hmp/Projects/SDL3/Triangle-Revisited/src/triangle/CMakeFiles/edit_cache.dir
+/home/hmp/Projects/SDL3/Triangle-Revisited/src/triangle/CMakeFiles/rebuild_cache.dir
