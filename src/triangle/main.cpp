@@ -26,8 +26,10 @@ static Vertex vertices[]{
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
     const char *basePath = SDL_GetBasePath();
-    std::string vertexPath = std::string(basePath) + "shaders/vertex.spv";
-    std::string fragmentPath = std::string(basePath) + "shaders/fragment.spv";
+    std::string vertexPath =
+        std::string(basePath) + "../assets/shaders/vertex.spv";
+    std::string fragmentPath =
+        std::string(basePath) + "../assets/shaders/fragment.spv";
     window =
         SDL_CreateWindow("Hello, Triangle!", 960, 450, SDL_WINDOW_RESIZABLE);
 

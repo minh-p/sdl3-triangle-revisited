@@ -57,10 +57,10 @@ RM = /nix/store/fx11rh3sihxf226frjrpc9hipbnafaj4-cmake-4.1.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hmp/Projects/SDL3/Triangle-Revisited
+CMAKE_SOURCE_DIR = /home/hmp/Projects/SDL/Triangle-Revisited
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hmp/Projects/SDL3/Triangle-Revisited
+CMAKE_BINARY_DIR = /home/hmp/Projects/SDL/Triangle-Revisited
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL3/Triangle-Revisited/CMakeFiles /home/hmp/Projects/SDL3/Triangle-Revisited/src/triangle//CMakeFiles/progress.marks
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL3/Triangle-Revisited/CMakeFiles 0
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL/Triangle-Revisited/CMakeFiles /home/hmp/Projects/SDL/Triangle-Revisited/src/triangle//CMakeFiles/progress.marks
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL/Triangle-Revisited/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/clean
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,36 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/preinstall
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/preinstall
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+src/triangle/CMakeFiles/compile_shaders.dir/rule:
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/CMakeFiles/compile_shaders.dir/rule
+.PHONY : src/triangle/CMakeFiles/compile_shaders.dir/rule
+
+# Convenience name for target.
+compile_shaders: src/triangle/CMakeFiles/compile_shaders.dir/rule
+.PHONY : compile_shaders
+
+# fast build rule for target.
+compile_shaders/fast:
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/compile_shaders.dir/build.make src/triangle/CMakeFiles/compile_shaders.dir/build
+.PHONY : compile_shaders/fast
+
+# Convenience name for target.
 src/triangle/CMakeFiles/triangle.dir/rule:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/CMakeFiles/triangle.dir/rule
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/triangle/CMakeFiles/triangle.dir/rule
 .PHONY : src/triangle/CMakeFiles/triangle.dir/rule
 
 # Convenience name for target.
@@ -127,7 +141,7 @@ triangle: src/triangle/CMakeFiles/triangle.dir/rule
 
 # fast build rule for target.
 triangle/fast:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/build
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/build
 .PHONY : triangle/fast
 
 main.o: main.cpp.o
@@ -135,7 +149,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/main.cpp.o
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -143,7 +157,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/main.cpp.i
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -151,7 +165,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/main.cpp.s
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f src/triangle/CMakeFiles/triangle.dir/build.make src/triangle/CMakeFiles/triangle.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -162,6 +176,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... compile_shaders"
 	@echo "... triangle"
 	@echo "... main.o"
 	@echo "... main.i"
@@ -177,6 +192,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

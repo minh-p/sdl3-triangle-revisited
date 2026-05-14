@@ -57,10 +57,10 @@ RM = /nix/store/fx11rh3sihxf226frjrpc9hipbnafaj4-cmake-4.1.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hmp/Projects/SDL3/Triangle-Revisited
+CMAKE_SOURCE_DIR = /home/hmp/Projects/SDL/Triangle-Revisited
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hmp/Projects/SDL3/Triangle-Revisited
+CMAKE_BINARY_DIR = /home/hmp/Projects/SDL/Triangle-Revisited
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL3/Triangle-Revisited/CMakeFiles /home/hmp/Projects/SDL3/Triangle-Revisited/src//CMakeFiles/progress.marks
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL3/Triangle-Revisited/CMakeFiles 0
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL/Triangle-Revisited/CMakeFiles /home/hmp/Projects/SDL/Triangle-Revisited/src//CMakeFiles/progress.marks
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hmp/Projects/SDL/Triangle-Revisited/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,17 +103,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -135,6 +135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/hmp/Projects/SDL3/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/hmp/Projects/SDL/Triangle-Revisited && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

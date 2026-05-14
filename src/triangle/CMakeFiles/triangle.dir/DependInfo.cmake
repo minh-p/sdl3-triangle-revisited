@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/hmp/Projects/SDL3/Triangle-Revisited/src/triangle/main.cpp" "src/triangle/CMakeFiles/triangle.dir/main.cpp.o" "gcc" "src/triangle/CMakeFiles/triangle.dir/main.cpp.o.d"
+  "/home/hmp/Projects/SDL/Triangle-Revisited/src/triangle/main.cpp" "src/triangle/CMakeFiles/triangle.dir/main.cpp.o" "gcc" "src/triangle/CMakeFiles/triangle.dir/main.cpp.o.d"
   "" "bin/triangle" "gcc" "src/triangle/CMakeFiles/triangle.dir/link.d"
   )
 

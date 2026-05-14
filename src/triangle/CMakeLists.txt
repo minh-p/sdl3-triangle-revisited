@@ -1,7 +1,7 @@
 find_program(GLSLC glslc REQUIRED)
 
 set(SHADER_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/shaders)
-set(SHADER_BINARY_DIR ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/shaders)
+set(SHADER_BINARY_DIR ${CMAKE_BINARY_DIR}/assets/shaders)
 
 set(SHADERS vertex.vert fragment.frag)
 
