@@ -5,6 +5,7 @@
 #define SDL_MAIN_USE_CALLBACKS
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
+#include <string>
 
 SDL_Window *window;
 SDL_GPUDevice *device;
@@ -24,6 +25,9 @@ static Vertex vertices[]{
 };
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
+    const char *basePath = SDL_GetBasePath();
+    std::string vertexPath = std::string(basePath) + "shaders/vertex.spv";
+    std::string fragmentPath = std::string(basePath) + "shaders/fragment.spv";
     window =
         SDL_CreateWindow("Hello, Triangle!", 960, 450, SDL_WINDOW_RESIZABLE);
 
@@ -31,7 +35,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
     SDL_ClaimWindowForGPUDevice(device, window);
 
     size_t vertexCodeSize;
-    void *vertexCode = SDL_LoadFile("shaders/vertex.spv", &vertexCodeSize);
+    void *vertexCode = SDL_LoadFile(vertexPath.c_str(), &vertexCodeSize);
 
     if (!vertexCode) {
         SDL_Log("Failed to load vertex.spv: %s", SDL_GetError());
@@ -51,8 +55,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
     SDL_free(vertexCode);
 
     size_t fragmentCodeSize;
-    void *fragmentCode =
-        SDL_LoadFile("shaders/fragment.spv", &fragmentCodeSize);
+    void *fragmentCode = SDL_LoadFile(fragmentPath.c_str(), &fragmentCodeSize);
 
     if (!fragmentCode) {
         SDL_Log("Failed to load fragment.spv: %s", SDL_GetError());
