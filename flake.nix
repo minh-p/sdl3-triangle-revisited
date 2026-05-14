@@ -40,6 +40,7 @@
                     cmake
                     self.formatter.${system}
                     sdl3
+                    shaderc
                   ]
                   ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [ gdb ];
               };
